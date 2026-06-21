@@ -1,0 +1,34 @@
+spring:
+  webflux:
+    base-path: /demo-api/v1
+  application:
+    name: demo-api
+
+server:
+  port: 9000
+
+management:
+  server:
+    port: 9001
+  endpoints:
+    web:
+      exposure:
+        include: startup, health, prometheus
+  endpoint:
+    startup:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
+demo:
+  health:
+    liveness-delay-seconds: 10
+    readiness-delay-seconds: 15

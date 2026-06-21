@@ -1,0 +1,20 @@
+spring:
+  webflux:
+    base-path: /demo-api/v1
+  application:
+    name: demo-api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+
+server:
+  port: 9001
