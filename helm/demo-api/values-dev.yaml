@@ -9,11 +9,11 @@ service:
 
 resources:
   limits:
-    cpu: 600m
+    cpu: 800m
     memory: 600Mi
 
   requests:
-    cpu: 100m
+    cpu: 200m
     memory: 256Mi
 
 
@@ -26,6 +26,6 @@ ingress:
 
 autoscaling:
   enabled: true
-  minReplicas: 2
-  maxReplicas: 4
+  minReplicas: 1
+  maxReplicas: 3
   targetCPUUtilizationPercentage: 60
